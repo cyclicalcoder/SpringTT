@@ -11,6 +11,8 @@ public class AppBeanList {
 		
 		Jungle jungle = (Jungle)context.getBean("jungle");
 		System.out.println(jungle);
+		System.out.println("this is committeddddddd");
+
 	}
 
 }
