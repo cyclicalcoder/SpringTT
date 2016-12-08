@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-destroy-method="destroy" default-init-method="init"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="person" class="com.adb.spring.test.Person" init-method="init"
+		scope="prototype">
+		<constructor-arg name="id" value="5"></constructor-arg>
+		<constructor-arg name="name" value="Amit"></constructor-arg>
+		<property name="taxId" value="12345"></property>
+		<property name="addresss" ref="address2"></property>
+	</bean>
+	<bean id="address" name="address" class="com.adb.spring.test.Address">
+		<constructor-arg name="street" value="karvenagar"></constructor-arg>
+		<constructor-arg name="zipcode" value="411052"></constructor-arg>
+	</bean>
+	<bean id="address2" name="address2" class="com.adb.spring.test.Address" p:street="Sinhgad Road" p:zipcode="52">
+	</bean>
+
+</beans>

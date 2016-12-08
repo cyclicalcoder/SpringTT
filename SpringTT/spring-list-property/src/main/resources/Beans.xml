@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="fruitbasket1" name="fruitbasket1"
+		class="com.adb.spring.tutorial.list.FruitBasket">
+
+
+		<property name="name" value="Amit's basket"></property>
+		<property name="fruits">
+			<list>
+				<value>Mango</value>
+				<value>Jackfruit</value>
+				<value>Banana</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="jungle" name="jungle"
+		class="com.adb.spring.tutorial.list.Jungle">
+	<property name="largest" ref="elephant"></property>
+	<property name="animals">
+		<list>
+			<ref bean="lion" />
+			<ref bean="snake" />
+			<ref bean="elephant" />
+		</list>
+	</property>
+	</bean>
+
+	<bean id="lion" name="lion" class="com.adb.spring.tutorial.list.Animal">
+		<property name="name" value="Sherkhan"></property>
+		<property name="type" value="cat"></property>
+	</bean>
+	<bean id="snake" name="snake" class="com.adb.spring.tutorial.list.Animal">
+		<property name="name" value="Nagesh"></property>
+		<property name="type" value="reptile"></property>
+	</bean>
+	<bean id="elephant" name="elephant" class="com.adb.spring.tutorial.list.Animal">
+		<property name="name" value="Zumba"></property>
+		<property name="type" value="Elephant"></property>
+	</bean>
+</beans>
